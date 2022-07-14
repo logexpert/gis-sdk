@@ -1,4 +1,4 @@
-import {ObjectsHandler, TrackPointsHandler} from "./handlers"
+import {ObjectsHandler, TrackPointsHandler, ObjectStateInfosHandler} from "./handlers"
 import {ITransport} from "./transport"
 import {TransportAxios} from "./base"
 import {IAuth} from "./auth"
@@ -19,6 +19,7 @@ export type LogexpertOptions = {
 export class Logexpert {
     private _objects?: ObjectsHandler
     private _trackPoints?: TrackPointsHandler
+    private _objectStateInfos?: ObjectStateInfosHandler
 
     protected version: number
 
@@ -89,5 +90,13 @@ export class Logexpert {
         }
 
         return this._trackPoints
+    }
+
+    get objectStateInfos(): ObjectStateInfosHandler {
+        if(!this._objectStateInfos) {
+            this._objectStateInfos = new ObjectStateInfosHandler(this.transport, this.version)
+        }
+
+        return this._objectStateInfos
     }
 }
