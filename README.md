@@ -11,7 +11,7 @@ npm install @logexpert/gis-sdk
 
 ```javascript
 import { Logexpert } from '@logexpert/gis-sdk'
-const sdk = new Logexpert('gis.logexpert.ru')
+const sdk = new Logexpert('https://gis.logexpert.ru')
 
 sdk.auth.static('<your token>')
 //or
@@ -26,7 +26,7 @@ const objects = await sdk.objects.readByQuery({
 ### Get points
 ```javascript
 import { Logexpert } from '@logexpert/gis-sdk'
-const sdk = new Logexpert('gis.logexpert.ru')
+const sdk = new Logexpert('https://gis.logexpert.ru')
 const points = await sdk.trackPoints.read('<object id>',
     new Date('2022-17-14T00:00:00'), new Date('2022-07-14T23:59:59'))
 ```
