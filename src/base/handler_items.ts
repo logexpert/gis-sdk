@@ -1,6 +1,6 @@
-import {ID, Item, PartialItem} from "../types";
-import {HandlerResponseMany, HandlerResponseOne, IHandlerItems, HandlerOptions, QueryOne, QueryMany} from "../handler";
-import {ITransport} from "../transport";
+import {ID, Item, PartialItem} from "../types"
+import {HandlerResponseMany, HandlerResponseOne, IHandlerItems, HandlerOptions, QueryOne, QueryMany} from "../handler"
+import {ITransport} from "../transport"
 
 export type Query<T> = QueryOne<T> | QueryMany<T>
 
