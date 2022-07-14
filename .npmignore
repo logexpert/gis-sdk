@@ -191,5 +191,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-lib/
 .idea/
