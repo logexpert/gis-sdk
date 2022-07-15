@@ -132,6 +132,8 @@ export class Auth extends IAuth {
             }
         })
 
+        this.staticToken = token
+
         return this._updateStorage<StaticToken>({
             access_token: token,
             expires: null,
