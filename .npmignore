@@ -3,6 +3,7 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 /.idea/
+/src/
 
 # User-specific stuff
 .idea/**/workspace.xml
@@ -190,5 +191,3 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
-
-.idea/
