@@ -21,11 +21,11 @@ export class Logexpert {
     private _trackPoints?: TrackPointsHandler
     private _objectStateInfos?: ObjectStateInfosHandler
 
-    protected version: number
+    protected readonly version: number
 
-    transport: ITransport
-    storage: IStorage
-    auth: IAuth
+    readonly transport: ITransport
+    readonly storage: IStorage
+    readonly auth: IAuth
 
     constructor(url: string, options?: LogexpertOptions, version: number = 1) {
         this.version = version
