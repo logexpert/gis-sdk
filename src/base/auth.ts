@@ -124,8 +124,6 @@ export class Auth extends IAuth {
     }
 
     async static(token: AuthToken): Promise<void> {
-        this.staticToken = token
-
         await this.transport.get('v1/account', {
             headers: {
                 Authorization: `ApiKey ${token}`
