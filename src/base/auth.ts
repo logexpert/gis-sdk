@@ -80,7 +80,7 @@ export class Auth extends IAuth {
         return this._resetStorage()
     }
 
-    async refresh(): Promise<AuthResult | false> {
+    refresh(): Promise<AuthResult | false> {
         const refreshPromise = async () => {
             const refresh = await this.storage.get(StorageKeys.RefreshToken)
             if(!refresh) return false
