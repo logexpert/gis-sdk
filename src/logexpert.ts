@@ -4,7 +4,7 @@ import {TransportAxios} from "./base"
 import {IAuth} from "./auth"
 import {IStorage} from "./storage"
 import {LocalStorage, MemoryStorage, StorageOptions} from "./base/storage"
-import {Auth, AuthOptions} from "./base/auth";
+import {Auth, AuthOptions} from "./base/auth"
 
 export type LogexpertStorageOptions = StorageOptions & {
     mode?: 'LocalStorage' | 'MemoryStorage' | 'NodeStorage'
@@ -21,11 +21,11 @@ export class Logexpert {
     private _trackPoints?: TrackPointsHandler
     private _objectStateInfos?: ObjectStateInfosHandler
 
-    protected version: number
+    protected readonly version: number
 
-    transport: ITransport
-    storage: IStorage
-    auth: IAuth
+    readonly transport: ITransport
+    readonly storage: IStorage
+    readonly auth: IAuth
 
     constructor(url: string, options?: LogexpertOptions, version: number = 1) {
         this.version = version
