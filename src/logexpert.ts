@@ -4,7 +4,7 @@ import {TransportAxios} from "./base"
 import {IAuth} from "./auth"
 import {IStorage} from "./storage"
 import {LocalStorage, MemoryStorage, StorageOptions} from "./base/storage"
-import {Auth, AuthOptions} from "./base/auth";
+import {Auth, AuthOptions} from "./base/auth"
 
 export type LogexpertStorageOptions = StorageOptions & {
     mode?: 'LocalStorage' | 'MemoryStorage' | 'NodeStorage'
