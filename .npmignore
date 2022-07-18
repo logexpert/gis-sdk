@@ -4,6 +4,8 @@
 
 /.idea/
 /src/
+/tests/
+jest.config.ts
 
 # User-specific stuff
 .idea/**/workspace.xml
