@@ -1,4 +1,10 @@
-import {ObjectsHandler, TrackPointsHandler, ObjectStateInfosHandler} from "./handlers"
+import {
+    ObjectsHandler,
+    TrackPointsHandler,
+    ObjectStateInfosHandler,
+    EventsHandler
+} from "./handlers"
+
 import {ITransport} from "./transport"
 import {TransportAxios} from "./base"
 import {IAuth} from "./auth"
