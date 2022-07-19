@@ -5,6 +5,7 @@ import {IAuth} from "./auth"
 import {IStorage} from "./storage"
 import {LocalStorage, MemoryStorage, StorageOptions} from "./base/storage"
 import {Auth, AuthOptions} from "./base/auth"
+import {ExchangeHandler} from "./handlers"
 
 export type LogexpertStorageOptions = StorageOptions & {
     mode?: 'LocalStorage' | 'MemoryStorage' | 'NodeStorage'
@@ -20,6 +21,7 @@ export class Logexpert {
     private _objects?: ObjectsHandler
     private _trackPoints?: TrackPointsHandler
     private _objectStateInfos?: ObjectStateInfosHandler
+    private _exchange?: ExchangeHandler
 
     protected readonly version: number
 
@@ -98,5 +100,10 @@ export class Logexpert {
         }
 
         return this._objectStateInfos
+    }
+
+    get exchange(): ExchangeHandler {
+        if(!this._exchange) this._exchange = new ExchangeHandler(this.transport, this.version)
+        return this._exchange
     }
 }

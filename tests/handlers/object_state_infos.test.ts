@@ -1,4 +1,4 @@
-import { Logexpert } from '../src'
+import { Logexpert } from '../../src'
 import 'jest-extended'
 const { LOGEXPERT_URL, LOGEXPERT_TOKEN, LOGEXPERT_CHECKED_OBJECT_ID } = process.env
 
