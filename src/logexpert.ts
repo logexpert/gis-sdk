@@ -5,7 +5,7 @@ import {IAuth} from "./auth"
 import {IStorage} from "./storage"
 import {LocalStorage, MemoryStorage, StorageOptions} from "./base/storage"
 import {Auth, AuthOptions} from "./base/auth"
-import {ExchangeHandler} from "./handlers/exchange";
+import {ExchangeHandler} from "./handlers"
 
 export type LogexpertStorageOptions = StorageOptions & {
     mode?: 'LocalStorage' | 'MemoryStorage' | 'NodeStorage'
