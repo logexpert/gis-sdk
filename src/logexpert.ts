@@ -28,6 +28,7 @@ export class Logexpert {
     private _trackPoints?: TrackPointsHandler
     private _objectStateInfos?: ObjectStateInfosHandler
     private _exchange?: ExchangeHandler
+    private _events?: EventsHandler
 
     protected readonly version: number
 
@@ -111,5 +112,10 @@ export class Logexpert {
     get exchange(): ExchangeHandler {
         if(!this._exchange) this._exchange = new ExchangeHandler(this.transport, this.version)
         return this._exchange
+    }
+
+    get events(): EventsHandler {
+        if(!this._events) this._events = new EventsHandler(this.transport, this.version)
+        return this._events
     }
 }
