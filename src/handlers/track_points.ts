@@ -1,5 +1,6 @@
 import {ITransport} from "../transport";
 import {ID, TrackPoint} from "../types";
+import {HandlerResponseMany} from "../handler";
 
 export class TrackPointsHandler {
     transport: ITransport
@@ -17,7 +18,7 @@ export class TrackPointsHandler {
     }
 
     async read(id: ID, from: Date, to: Date): Promise<TrackPoint[]> {
-        const response = await this.transport.get(this._path, {
+        const response = await this.transport.get<HandlerResponseMany<TrackPoint>>(this._path, {
             params: {
                 objectId: id,
                 begin: from.toISOString(),
@@ -25,6 +26,6 @@ export class TrackPointsHandler {
             }
         })
 
-        return response.data as TrackPoint[]
+        return response.data.value
     }
 }
