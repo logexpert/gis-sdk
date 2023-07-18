@@ -1,12 +1,24 @@
-import {ITransport} from "../transport";
-import {ID} from "../types";
-import {HandlerResponseMany} from "../handler";
+import { ITransport } from "../transport"
+import { ID, TrackPoint } from "../types"
+
+export type EventPoint = Pick<TrackPoint, 'Timestamp' | 'Latitude' | 'Longitude'> & {
+    Address?: string
+}
 
 export type RideDetectorEvent = {
     Begin: string
     End: string
     Type: 'Ride' | 'Stop' | 'Parking' | 'GpsOff' | 'GpsFail' | 'Teleport' | 'NoneWithMove' | 'None'
     Mileage: number
+    Duration: string
+    MaxSpeed: number
+    Points?: TrackPoint[]
+    BeginPoint?: EventPoint
+    EndPoint?: EventPoint
+}
+
+type EventsResult = {
+    Value: RideDetectorEvent[]
 }
 
 export class EventsHandler {
@@ -25,13 +37,13 @@ export class EventsHandler {
     }
 
     async rideDetector(id: ID, from: Date, to: Date): Promise<RideDetectorEvent[]> {
-        const response = await this.transport.get<HandlerResponseMany<RideDetectorEvent>>(`${this._path}/ridedetector/${id}`, {
+        const response = await this.transport.get<EventsResult>(`${this._path}/ridedetector/${id}`, {
             params: {
                 begin: from,
                 end: to
             }
         })
 
-        return response.data.value
+        return response.data.Value
     }
 }
