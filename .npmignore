@@ -6,6 +6,7 @@
 /src/
 /tests/
 jest.config.ts
+.github
 
 # User-specific stuff
 .idea/**/workspace.xml
@@ -148,7 +149,7 @@ web_modules/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
+tests/.env.test
 .env.test
 
 # parcel-bundler cache (https://parceljs.org/)
