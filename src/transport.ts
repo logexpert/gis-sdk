@@ -1,4 +1,4 @@
-export type Headers = Record<string, string>
+export type Headers = Record<string, any>
 
 export type TransportResponse<T> = {
     data: T
